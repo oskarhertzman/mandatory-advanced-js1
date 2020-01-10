@@ -1,0 +1,175 @@
+body {
+  margin:0;
+   padding:0;
+   height:100%;
+}
+
+
+.App {
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ChatApp {
+  min-height:100%;
+  position:relative;
+}
+
+.Header {
+  position: sticky;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  background-color: #04938A;
+  color: #31e0d5;
+  border-bottom: 1px solid #04938A;
+}
+
+.Header h1 {
+  padding-left: 20px;
+}
+
+.Chat {
+
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 150px;
+}
+
+
+.Chat div p {
+  color: white;
+  max-width: 200px;
+  padding: 20px;
+  position: relative;
+	background: #04938A;
+	border-radius: 50px;
+}
+.Chat div p.last::after {
+  content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 22px solid transparent;
+	border-right-color: #04938A;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -16px;
+	margin-left: -15px;
+}
+.footer {
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  color: #31e0d5;
+  background-color: #04938A;
+  position: fixed;
+  padding: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+}
+
+footer .input-field input,
+button {
+  border-color: #FFFFFF;
+}
+
+.chatname {
+  font-style: italic;
+}
+
+
+input[type="text"] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+input[type="submit"] {
+  margin-top: 30px;
+}
+
+
+.chatinput {
+  position: relative;
+  margin-top: 30px;
+  color: white;
+  background-color:  #04938A;
+}
+
+.chatinput input {
+  color: white;
+  width: 600px;
+  height: 100px;
+  border: none;
+  background-color: inherit;
+  border-bottom: 1px solid white;
+}
+::placeholder {
+  color: #04938A;
+}
+
+
+.chatbutton {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: solid 1px transparent;
+  border-radius: 60px;
+  color: white;
+  background-color: #31e0d5;
+}
+
+.chatbutton:hover {
+  cursor: pointer;
+}
+
+.chatbutton img {
+  padding-left: 3px;
+}
