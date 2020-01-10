@@ -67,7 +67,7 @@ class Login extends React.Component {
           <p id="loginError" style = {errorMessage}> The username can only contain alphanumeric characters, “-”, “_” and spaces and must be between 1 and 12 characters long. </p>
           </div>
           <br></br>
-          <input type="submit" value="Submit" />
+          <input className="login" type="submit" value="Submit" />
           </form>
           </div>
         );

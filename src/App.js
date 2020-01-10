@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom'
 import Login from './login.js';
 import Chat from './chat.js';
 import './App.css';

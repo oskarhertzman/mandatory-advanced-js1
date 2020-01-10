@@ -1,7 +1,8 @@
 body {
-  margin:0;
+   margin:0;
    padding:0;
    height:100%;
+
 }
 
 
@@ -74,11 +75,17 @@ body {
   padding-bottom: 150px;
 }
 
+.Chat h3 {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
 
 .Chat div p {
   color: white;
-  max-width: 200px;
+  width: 200px;
+  max-width: 1000px;
   padding: 20px;
+  margin-bottom: 40px;
   position: relative;
 	background: #04938A;
 	border-radius: 50px;
@@ -172,4 +179,32 @@ input[type="submit"] {
 
 .chatbutton img {
   padding-left: 3px;
+}
+
+.login {
+  background-color: #04938A;
+  color: white;
+  margin-top: -50px;
+  height: 50px;
+  width: 100px;
+  border: solid 1px transparent;
+  border-radius: 60px;
+}
+
+.login:hover {
+  cursor: pointer;
+}
+.logout {
+  position: absolute;
+  right: 0;
+  margin-top: 50px;
+  margin-right: 50px;
+  height: 50px;
+  width: 100px;
+  border: solid 1px transparent;
+  border-radius: 60px;
+}
+
+.logout:hover {
+  cursor: pointer;
 }
