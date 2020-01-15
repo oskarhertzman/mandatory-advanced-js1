@@ -90,20 +90,7 @@ body {
 	background: #04938A;
 	border-radius: 50px;
 }
-.Chat div p.last::after {
-  content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 22px solid transparent;
-	border-right-color: #04938A;
-	border-left: 0;
-	border-top: 0;
-	margin-top: -16px;
-	margin-left: -15px;
-}
+
 .footer {
   position:absolute;
   display: flex;
@@ -203,6 +190,11 @@ input[type="submit"] {
   width: 100px;
   border: solid 1px transparent;
   border-radius: 60px;
+
+}
+
+.logout p {
+  font-weight: bold;
 }
 
 .logout:hover {

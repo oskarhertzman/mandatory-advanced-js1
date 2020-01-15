@@ -5,6 +5,8 @@ import Linkify from 'react-linkify';
 import Emojify from 'react-emojione';
 import sendBtn from './send-button.png';
 
+
+
 class Chat extends React.Component {
   constructor(props) {
     super(props);
@@ -25,17 +27,20 @@ class Chat extends React.Component {
 
   componentDidMount() {
     this.scrollToBottom();
+    // Socket Connection
     this.socket = io('http://3.120.96.16:3000');
     let socket = this.socket;
     socket.on('connect', function(){
       console.log("CONNECTED!");
       console.log(socket.id);
     });
+
+    // Messages from server logic
     socket.on('messages', data => {
       this.setState({messages: data})
-      let messages = data;
-      console.log(messages);
     });
+
+    // New messages logic
     socket.on('new_message', message => {
       if(message) {
         console.log("NEW MESSAGE: ", message);
@@ -52,7 +57,7 @@ class Chat extends React.Component {
         this.setState({messages: joined})
         console.log(this.state.messages);
       }
-    })
+    });
   }
 
   componentDidUpdate () {
@@ -67,6 +72,7 @@ class Chat extends React.Component {
     this.setState({content: e.target.value});
   }
 
+  // Own message submittion logic using data from the response callback
   handleChatSubmit(e) {
     e.preventDefault();
     let socket = this.socket;
@@ -86,8 +92,8 @@ class Chat extends React.Component {
       }, (response) => {
         this.setState({my_message: response.data.newMessage})
         console.log(this.state.my_message);
-        let myMessage = this.state.messages.concat(this.state.my_message);
-        this.setState({messages: myMessage});
+        let myMessageMerge = this.state.messages.concat(this.state.my_message);
+        this.setState({messages: myMessageMerge});
         console.log("Emitted: ", response.data.newMessage);
       });
     }
@@ -97,11 +103,13 @@ class Chat extends React.Component {
     this.setState({content: ''})
   }
 
+  // Return to login page
   logout () {
     localStorage.clear();
     window.location.href = '/';
   }
 
+  // Close socket when component will unmount
   componentWillUnmount() {
     this.socket.close();
     this.socket.on('disconnect', function(){});
@@ -111,6 +119,7 @@ class Chat extends React.Component {
 
       render(){
 
+        // Message rendering with link and emoji support
         let chatInfo = this.state.messages;
         const ChatRender = ({chatInfo}) => (
 
@@ -143,7 +152,7 @@ class Chat extends React.Component {
         <span style={{textTransform: 'capitalize'}}>User: #{this.props.username}</span>
       </div>
     </form>
-    <button className="logout" onClick ={this.logout} > Logout </button>
+    <button className="logout" onClick ={this.logout} ><p>Logout</p></button>
   </footer>
   <div ref={el => { this.el = el; }} />
 </div>
